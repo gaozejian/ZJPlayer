@@ -41,23 +41,28 @@
 -(void)pause{
     [self.player pause];
 }
+#pragma mark 添加状态监听
 -(void)addObserver:(AVPlayerItem *)itme{
     [itme addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
     [itme addObserver:self forKeyPath:@"error" options:NSKeyValueObservingOptionNew context:nil];
+    //观察缓存现在的进度，KVO进行观察，观察loadedTimeRanges
+    [itme addObserver:self forKeyPath:@"loadedTimeRanges" options:NSKeyValueObservingOptionNew context:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackFinished:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
     //AVPlayerItemNewErrorLogEntryNotification
     [self monitoringPlayback:itme];
 }
+#pragma mark 移除监听状态监听
 -(void)removeObserver:(AVPlayerItem *)itme{
     [itme removeObserver:self forKeyPath:@"status"];
      [itme removeObserver:self forKeyPath:@"error"];
+   [itme removeObserver:self forKeyPath:@"loadedTimeRanges"];
     [[NSNotificationCenter defaultCenter]removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
 }
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
 
                         change:(NSDictionary *)change context:(void *)context {
     
-    if (object ==self.self.player.currentItem && [keyPath isEqualToString:@"status"]) {
+    if (object ==self.player.currentItem && [keyPath isEqualToString:@"status"]) {
         AVPlayerStatus status = [[change objectForKey:NSKeyValueChangeNewKey]integerValue];
         if (status ==AVPlayerStatusFailed) {
             NSLog(@"====AVPlayerStatusFailed");
@@ -66,10 +71,30 @@
         }else{
              NSLog(@"====AVPlayerStatusUnknown");
         }
-       // NSLog(@"====%ld",status);
+       
     }else if (object ==self.player.currentItem && [keyPath isEqualToString:@"error"]){
         NSError * error = [change objectForKey:NSKeyValueChangeNewKey];
         NSLog(@"===%@",error);
+    }else if (object ==self.player.currentItem && [keyPath isEqualToString:@"loadedTimeRanges"]){
+        //kvo触发的另外一个属性
+        NSArray *array = [object loadedTimeRanges];
+        //获取范围i
+        CMTimeRange range = [array.firstObject CMTimeRangeValue];
+        //从哪儿开始的
+        CGFloat start = CMTimeGetSeconds(range.start);
+        //缓存了多少
+        CGFloat duration = CMTimeGetSeconds(range.duration);
+        //一共缓存了多少
+        CGFloat allCache = start+duration;
+        NSLog(@"缓存了多少数据：%f",allCache);
+        
+        //设置缓存的百分比
+        CMTime allTime = [(AVPlayerItem*)object duration];
+        //转换
+        CGFloat time = CMTimeGetSeconds(allTime);
+        CGFloat y = allCache/time;
+        NSLog(@"缓存百分比：--------%f",y);
+       
     }
     
 }
@@ -85,10 +110,11 @@
         //总时间
         double floattotal = CMTimeGetSeconds(item.duration);
         
-        NSLog(@"%f  %f",floatcurrent,floattotal);
+     //   NSLog(@"%f  %f",floatcurrent,floattotal);
     }];
 }
 -(void)playbackFinished:(NSNotification*)Notification{
     NSLog(@"结束");
+    [self removeObserver:self.player.currentItem];
 }
 @end
