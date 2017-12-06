@@ -27,6 +27,7 @@ xcuserdata/
 *.ipa
 *.dSYM.zip
 *.dSYM
+.xcbkptlist
 *.xcuserstate  
 project.xcworkspace  
 xcuserdata  
