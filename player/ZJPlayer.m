@@ -8,7 +8,8 @@
 
 #import "ZJPlayer.h"
 #import <AVFoundation/AVFoundation.h>
-@interface ZJPlayer(){
+#import "ZJAVAssetResourceLoader.h"
+@interface ZJPlayer()<AVAssetResourceLoaderDelegate>{
     id _playTimeObserver;
 }
 @property(nonatomic,strong)AVPlayer * player;
@@ -18,18 +19,22 @@
 @implementation ZJPlayer
 -(instancetype)init{
     if (self = [super init]) {
+        
         [self initPlayer];
     }
     return self;
 }
 
 -(void)initPlayer{
+    
     self.player = [[AVPlayer alloc]initWithPlayerItem:nil];
     self.player.automaticallyWaitsToMinimizeStalling = NO;
-  
+    
 }
 -(void)playInitData:(NSURL*)url{
     AVURLAsset * asset = [[AVURLAsset alloc]initWithURL:url options:nil];
+    //self.resourceLoader
+    [asset.resourceLoader setDelegate:[[ZJAVAssetResourceLoader alloc]init] queue:dispatch_get_main_queue()];
     AVPlayerItem  *itme = [[AVPlayerItem alloc]initWithAsset:asset];
    // self.itme = itme;
     [self addObserver:itme];
@@ -117,4 +122,18 @@
     NSLog(@"结束");
     [self removeObserver:self.player.currentItem];
 }
+
+
+
+
+//- (BOOL)resourceLoader:(AVAssetResourceLoader *)resourceLoader shouldWaitForLoadingOfRequestedResource:(AVAssetResourceLoadingRequest *)loadingRequest {
+//    NSLog(@"%@",loadingRequest);
+//   // [self addLoadingRequest:loadingRequest];
+//    return YES;
+//}
+//
+//- (void)resourceLoader:(AVAssetResourceLoader *)resourceLoader didCancelLoadingRequest:(AVAssetResourceLoadingRequest *)loadingRequest {
+//  //  [self removeLoadingRequest:loadingRequest];
+//}
+
 @end

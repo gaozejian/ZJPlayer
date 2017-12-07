@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF1D7EDB1FD93850003A1D27 /* ZJAVAssetResourceLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1D7EDA1FD93850003A1D27 /* ZJAVAssetResourceLoader.m */; };
 		EF6EB7A91FD68D8A000A0171 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6EB7A81FD68D8A000A0171 /* AppDelegate.m */; };
 		EF6EB7AC1FD68D8A000A0171 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6EB7AB1FD68D8A000A0171 /* ViewController.m */; };
 		EF6EB7AF1FD68D8A000A0171 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF6EB7AD1FD68D8A000A0171 /* Main.storyboard */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EF1D7ED91FD93850003A1D27 /* ZJAVAssetResourceLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJAVAssetResourceLoader.h; sourceTree = "<group>"; };
+		EF1D7EDA1FD93850003A1D27 /* ZJAVAssetResourceLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJAVAssetResourceLoader.m; sourceTree = "<group>"; };
 		EF6EB7A41FD68D8A000A0171 /* player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = player.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF6EB7A71FD68D8A000A0171 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EF6EB7A81FD68D8A000A0171 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -116,6 +119,8 @@
 				EF6EB7AB1FD68D8A000A0171 /* ViewController.m */,
 				EF6EB7DC1FD68E4B000A0171 /* ZJPlayer.h */,
 				EF6EB7DD1FD68E4B000A0171 /* ZJPlayer.m */,
+				EF1D7ED91FD93850003A1D27 /* ZJAVAssetResourceLoader.h */,
+				EF1D7EDA1FD93850003A1D27 /* ZJAVAssetResourceLoader.m */,
 				EF6EB7E31FD697D1000A0171 /* ZJPlayerManger.h */,
 				EF6EB7E41FD697D1000A0171 /* ZJPlayerManger.m */,
 				EF6EB7AD1FD68D8A000A0171 /* Main.storyboard */,
@@ -296,6 +301,7 @@
 			files = (
 				EF6EB7AC1FD68D8A000A0171 /* ViewController.m in Sources */,
 				EF6EB7B71FD68D8A000A0171 /* main.m in Sources */,
+				EF1D7EDB1FD93850003A1D27 /* ZJAVAssetResourceLoader.m in Sources */,
 				EF6EB7DE1FD68E4B000A0171 /* ZJPlayer.m in Sources */,
 				EF6EB7E51FD697D1000A0171 /* ZJPlayerManger.m in Sources */,
 				EF6EB7A91FD68D8A000A0171 /* AppDelegate.m in Sources */,
