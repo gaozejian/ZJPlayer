@@ -14,7 +14,8 @@
 }
 @property(nonatomic,strong)AVPlayer * player;
 
-
+/*注释:<#name#> */
+@property (nonatomic, strong) ZJAVAssetResourceLoader *loader;
 @end
 @implementation ZJPlayer
 -(instancetype)init{
@@ -32,15 +33,17 @@
     
 }
 -(void)playInitData:(NSURL*)url{
-    AVURLAsset * asset = [[AVURLAsset alloc]initWithURL:url options:nil];
-    //self.resourceLoader
-    [asset.resourceLoader setDelegate:[[ZJAVAssetResourceLoader alloc]init] queue:dispatch_get_main_queue()];
-    AVPlayerItem  *itme = [[AVPlayerItem alloc]initWithAsset:asset];
-   // self.itme = itme;
+
+    AVURLAsset * asset  =  [AVURLAsset URLAssetWithURL:url options:nil];
+    self.loader = [[ZJAVAssetResourceLoader alloc]init];
+    [asset.resourceLoader setDelegate:self.loader queue:dispatch_get_main_queue()];
+   
+    AVPlayerItem *itme = [[AVPlayerItem alloc]initWithAsset:asset];
     [self addObserver:itme];
     [self.player replaceCurrentItemWithPlayerItem:itme];
 }
 -(void)play{
+
     [self.player play];
 }
 -(void)pause{
@@ -91,14 +94,14 @@
         CGFloat duration = CMTimeGetSeconds(range.duration);
         //一共缓存了多少
         CGFloat allCache = start+duration;
-        NSLog(@"缓存了多少数据：%f",allCache);
+      //  NSLog(@"缓存了多少数据：%f",allCache);
         
         //设置缓存的百分比
         CMTime allTime = [(AVPlayerItem*)object duration];
         //转换
         CGFloat time = CMTimeGetSeconds(allTime);
         CGFloat y = allCache/time;
-        NSLog(@"缓存百分比：--------%f",y);
+       // NSLog(@"缓存百分比：--------%f",y);
        
     }
     
@@ -126,14 +129,16 @@
 
 
 
-//- (BOOL)resourceLoader:(AVAssetResourceLoader *)resourceLoader shouldWaitForLoadingOfRequestedResource:(AVAssetResourceLoadingRequest *)loadingRequest {
-//    NSLog(@"%@",loadingRequest);
-//   // [self addLoadingRequest:loadingRequest];
-//    return YES;
-//}
-//
-//- (void)resourceLoader:(AVAssetResourceLoader *)resourceLoader didCancelLoadingRequest:(AVAssetResourceLoadingRequest *)loadingRequest {
-//  //  [self removeLoadingRequest:loadingRequest];
-//}
+- (BOOL)resourceLoader:(AVAssetResourceLoader *)resourceLoader shouldWaitForLoadingOfRequestedResource:(AVAssetResourceLoadingRequest *)loadingRequest {
+    NSLog(@"%@",loadingRequest);
+   // [self addLoadingRequest:loadingRequest];
+    return NO;
+}
+- (BOOL)resourceLoader:(AVAssetResourceLoader *)resourceLoader shouldWaitForRenewalOfRequestedResource:(AVAssetResourceRenewalRequest *)renewalRequest{
+    return YES;
+}
+- (void)resourceLoader:(AVAssetResourceLoader *)resourceLoader didCancelLoadingRequest:(AVAssetResourceLoadingRequest *)loadingRequest {
+  //  [self removeLoadingRequest:loadingRequest];
+}
 
 @end

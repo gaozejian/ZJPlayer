@@ -28,12 +28,22 @@
     self.player = [[ZJPlayer alloc]init];
 }
 -(void)playData:(NSURL*)url{
-    [self.player playInitData:url];
+    
+    [self.player playInitData:[self getSchemeVideoURL:url]];
 }
 -(void)play{
     [self.player play];
 }
 -(void)pause{
     [self.player pause];
+}
+- (NSURL *)getSchemeVideoURL:(NSURL *)url
+{/**
+  注解:需要将URL的scheme修改,并且在plist中 URLtypes 添加
+  否则AVAssetResourceLoaderDelegate 代理方法不会执行 巨坑
+  **/
+    NSURLComponents *components = [[NSURLComponents alloc] initWithURL:url resolvingAgainstBaseURL:NO];
+    components.scheme = @"ezfm";
+    return [components URL];
 }
 @end

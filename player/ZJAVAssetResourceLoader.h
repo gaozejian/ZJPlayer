@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import<AVFoundation/AVFoundation.h>
-@interface ZJAVAssetResourceLoader : NSObject<AVAssetResourceLoaderDelegate>
+@interface ZJAVAssetResourceLoader :NSObject<AVAssetResourceLoaderDelegate>
 -(instancetype)init;
 @end
