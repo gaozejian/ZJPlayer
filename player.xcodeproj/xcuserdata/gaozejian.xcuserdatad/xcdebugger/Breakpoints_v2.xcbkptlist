@@ -206,8 +206,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
             endingLineNumber = "21"
-            landmarkName = "-resourceLoader:shouldWaitForLoadingOfRequestedResource:"
-            landmarkType = "7">
+            landmarkName = "ZJAVAssetResourceLoader"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
