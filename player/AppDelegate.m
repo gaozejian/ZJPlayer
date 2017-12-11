@@ -72,5 +72,13 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+-(BOOL)application:(UIApplication*)app openURL:(NSURL*)url options:(NSDictionary<NSString*,id>*)options{
+    if (url) {
+        UIAlertView *alertView = [[ UIAlertView alloc] initWithTitle:nil message:@"你唤醒了您的应用" delegate:self cancelButtonTitle:@"确定" otherButtonTitles : nil , nil ];
+        [alertView show];
+    }
+    return YES ;
+}
+
 
 @end
