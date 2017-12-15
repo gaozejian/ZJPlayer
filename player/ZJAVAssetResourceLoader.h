@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import<AVFoundation/AVFoundation.h>
-@interface ZJAVAssetResourceLoader :NSObject<AVAssetResourceLoaderDelegate>
+@protocol ZJDownloadTaskDelegate <NSObject>
+-(void)downLoading:(NSString*)path;
+@end
+@interface
+ZJAVAssetResourceLoader :NSObject<AVAssetResourceLoaderDelegate>
+/*注释:<#name#> */
+@property (nonatomic, weak) id <ZJDownloadTaskDelegate> delegate;
 -(instancetype)init;
+-(void)cancelTask;
 @end

@@ -9,7 +9,7 @@
 #import "ZJPlayer.h"
 #import <AVFoundation/AVFoundation.h>
 #import "ZJAVAssetResourceLoader.h"
-@interface ZJPlayer()<AVAssetResourceLoaderDelegate>{
+@interface ZJPlayer()<AVAssetResourceLoaderDelegate,ZJDownloadTaskDelegate>{
     id _playTimeObserver;
 }
 @property(nonatomic,strong)AVPlayer * player;
@@ -36,18 +36,22 @@
 
     AVURLAsset * asset  =  [AVURLAsset URLAssetWithURL:url options:nil];
     self.loader = [[ZJAVAssetResourceLoader alloc]init];
+    self.loader.delegate = self;
     [asset.resourceLoader setDelegate:self.loader queue:dispatch_get_main_queue()];
    
     AVPlayerItem *itme = [[AVPlayerItem alloc]initWithAsset:asset];
     [self addObserver:itme];
     [self.player replaceCurrentItemWithPlayerItem:itme];
+    [self play];
 }
+
 -(void)play{
 
     [self.player play];
 }
 -(void)pause{
     [self.player pause];
+    [self.loader cancelTask];
 }
 #pragma mark 添加状态监听
 -(void)addObserver:(AVPlayerItem *)itme{
@@ -129,16 +133,7 @@
 
 
 
-- (BOOL)resourceLoader:(AVAssetResourceLoader *)resourceLoader shouldWaitForLoadingOfRequestedResource:(AVAssetResourceLoadingRequest *)loadingRequest {
-    NSLog(@"%@",loadingRequest);
-   // [self addLoadingRequest:loadingRequest];
-    return NO;
-}
-- (BOOL)resourceLoader:(AVAssetResourceLoader *)resourceLoader shouldWaitForRenewalOfRequestedResource:(AVAssetResourceRenewalRequest *)renewalRequest{
-    return YES;
-}
-- (void)resourceLoader:(AVAssetResourceLoader *)resourceLoader didCancelLoadingRequest:(AVAssetResourceLoadingRequest *)loadingRequest {
-  //  [self removeLoadingRequest:loadingRequest];
-}
+
+
 
 @end
