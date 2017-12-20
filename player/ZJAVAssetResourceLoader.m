@@ -113,7 +113,9 @@ static CGFloat startOffset = 0;
             
     
          startOffset = ResourceLoadingRequest.dataRequest.requestedOffset;
-   
+        if (ResourceLoadingRequest.dataRequest.currentOffset != 0) {
+            startOffset =ResourceLoadingRequest.dataRequest.currentOffset;
+        }
         CGFloat requestedLength = ResourceLoadingRequest.dataRequest.requestedLength;
       
      
