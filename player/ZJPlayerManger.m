@@ -45,5 +45,6 @@
     NSURLComponents *components = [[NSURLComponents alloc] initWithURL:url resolvingAgainstBaseURL:NO];
     components.scheme = @"ezfm";
     return [components URL];
+   //return  url;
 }
 @end
