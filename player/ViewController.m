@@ -19,7 +19,7 @@
     [super viewDidLoad];
  
  
-    [ [ZJPlayerManger sharePlayerManger] playData:[NSURL URLWithString:@"http://huayuncpv.china.com/WJSL_YFMD/WJSL_YFMD/54c6f9582a80fc1e70ff5575/B3158D1E60284DD585702F0ADD5B4246.mp3"]];
+    [ [ZJPlayerManger sharePlayerManger] playData:[NSURL URLWithString:@"http://huayuncpv.china.com/WJSL_YFMD/WJSL_YFMD/54c6f9582a80fc1e70ff5575/B3158D1E60284DD585702F0ADD5B4246.mp3"]];//49851533
 //http://huayuncpv.china.com/WJSL_YFMD/WJSL_YFMD/54c6f9582a80fc1e70ff5575/B3158D1E60284DD585702F0ADD5B4246.mp3
     
     //http://resezfm.china.com//ueditor/video/1712/d0a09184-f92f-9c61-6d3b-ebf579497573.mp4

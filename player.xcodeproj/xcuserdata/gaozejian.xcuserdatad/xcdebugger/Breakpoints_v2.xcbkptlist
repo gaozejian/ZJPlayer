@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "player/ZJAVAssetResourceLoader.m"
-            timestampString = "535536380.251525"
+            timestampString = "536661542.398538"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "-createSession:"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "player/ZJAVAssetResourceLoader.m"
-            timestampString = "535536380.252251"
+            timestampString = "536661542.398904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "-URLSession:dataTask:didReceiveData:"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "-dealWithLoadingRequest:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,27 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "player/ZJAVAssetResourceLoader.m"
-            timestampString = "535536380.252545"
+            timestampString = "536661542.399171"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "-URLSession:dataTask:didReceiveData:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "player/ZJAVAssetResourceLoader.m"
-            timestampString = "535536380.252792"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "-URLSession:dataTask:didReceiveData:"
             landmarkType = "7">
             <Locations>
@@ -70,16 +54,16 @@
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__62-[ZJAVAssetResourceLoader URLSession:dataTask:didReceiveData:]_block_invoke"
+                  symbolName = "-[ZJAVAssetResourceLoader URLSession:dataTask:didReceiveData:]"
                   moduleName = "player"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/gaozejian/Desktop/play/player/ZJAVAssetResourceLoader.m"
-                  timestampString = "535528750.194685"
+                  timestampString = "536050252.694544"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "129"
-                  endingLineNumber = "129"
-                  offsetFromSymbolStart = "1633">
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "154">
                </Location>
                <Location
                   shouldBeEnabled = "No"
@@ -89,12 +73,12 @@
                   moduleName = "player"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/gaozejian/Desktop/play/player/ZJAVAssetResourceLoader.m"
-                  timestampString = "535528750.196474"
+                  timestampString = "536050252.70376"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "129"
-                  endingLineNumber = "129"
-                  offsetFromSymbolStart = "1809">
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "32">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -106,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "player/ZJAVAssetResourceLoader.m"
-            timestampString = "535536380.253026"
+            timestampString = "536661542.399417"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "-URLSession:dataTask:didReceiveData:"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,12 +106,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "player/ZJAVAssetResourceLoader.m"
-            timestampString = "535536380.25332"
+            timestampString = "536661542.399658"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
-            landmarkName = "-URLSession:dataTask:didReceiveData:"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
+            landmarkName = "-cancelTask"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -138,13 +122,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "player/ZJAVAssetResourceLoader.m"
-            timestampString = "535536380.253778"
+            timestampString = "536661542.399913"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
-            landmarkName = "-URLSession:dataTask:didReceiveData:"
-            landmarkType = "7">
+            startingLineNumber = "196"
+            endingLineNumber = "196"
+            landmarkName = "ZJAVAssetResourceLoader"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -154,28 +138,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "player/ZJAVAssetResourceLoader.m"
-            timestampString = "535536380.253967"
+            timestampString = "536661542.400167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "-URLSession:dataTask:didReceiveData:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "player/ZJAVAssetResourceLoader.m"
-            timestampString = "535536380.254143"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "-URLSession:dataTask:didReceiveData:"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
+            landmarkName = "-URLSession:didBecomeInvalidWithError:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
